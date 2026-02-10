@@ -1,188 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors</title>
-  <style>
-    /* General styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<div id="container">
 
-    body {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #fff;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.3);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Start Button */
-    .start-button {
-      padding: 15px 30px;
-      font-size: 20px;
-      color: #fff;
-      background: linear-gradient(45deg, #ff6f61, #ff8e53);
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
-      animation: bounce 1s infinite;
-      box-shadow: 0 4px 10px rgba(255, 110, 97, 0.6);
-    }
-
-    .start-button:hover {
-      transform: scale(1.1);
-      background: linear-gradient(45deg, #ff8e53, #ff6f61);
-    }
-
-    /* Fade and Bounce Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Choices Container */
-    .choices {
-      display: none;
-      margin-top: 20px;
-    }
-
-    .choice {
-      font-size: 50px;
-      padding: 10px;
-      margin: 0 20px;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: inline-block;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    }
-
-    .choice:hover {
-      transform: scale(1.2);
-      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5);
-    }
-
-    /* Display Results */
-    .result {
-      display: none;
-      font-size: 24px;
-      margin-top: 20px;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 1s;
-    }
-
-    .result.win {
-      color: #6afc85;
-    }
-
-    .result.lose {
-      color: #ff6f61;
-    }
-
-    .result.draw {
-      color: #f4d03f;
-    }
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Rock, Paper, Scissors</h1>
-    <button class="start-button" onclick="startGame()">Start Game</button>
-
-    <div class="choices">
-      <div class="choice" id="rock" onclick="play('rock')">✊</div>
-      <div class="choice" id="paper" onclick="play('paper')">✋</div>
-      <div class="choice" id="scissors" onclick="play('scissors')">✌️</div>
-    </div>
-
-    <div class="result" id="result">Choose an option to play!</div>
+  <div class="game-narrative" id="game-narrative-one">
+    <p class="game-narrative-text">In a world where two forces battle for domination of a war-torn landscape, only one will draw the line and reign supreme.</p>
+    <button class="game-btn" id="narrative-one-btn">...</button>
   </div>
 
-  <script>
-    function startGame() {
-      document.querySelector('.start-button').style.display = 'none';
-      document.querySelector('.choices').style.display = 'block';
-      document.querySelector('.result').style.display = 'block';
+  <div class="game-narrative" id="game-narrative-two">
+    <p class="game-narrative-text">The year is 2048.</p>
+    <p class="game-narrative-text">In a post apocalyptic galaxy run by giant corporations, you are a cybernetically enhanced space marine with no memory of their past.</p>
+    <button class="game-btn" id="narrative-two-btn">...</button>
+  </div>
 
-      // Add touch event listeners for mobile
-      document.querySelectorAll('.choice').forEach(function(choice) {
-        choice.addEventListener('touchstart', function(e) {
-          e.preventDefault(); // Prevent the default action of touch
-          play(choice.id);
-        });
-      });
-    }
+  <div class="game-narrative" id="game-narrative-three">
+    <p class="game-narrative-text">Are you the chosen one foretold by prophecy?</p>
+    <p class="game-narrative-text">Do you have the strength to survive...</p>
+    <div id="narrative-three-btns">
+      <button class="game-btn" id="narrative-three-btn">YES</button>
+      <div></div>
+      <a class="game-btn" id="puppies-btn" href="https://au.pinterest.com/explore/puppy-pictures/" target="_blank">NO</a>
+    </div>
+  </div>
 
-    function play(userChoice) {
-      const choices = ['rock', 'paper', 'scissors'];
-      let computerChoice;
+  <div id = "header">
+    <p class="dramatic-text">
+      <span id = "tic-text">Tic </span>
+      <span id = "tac-text">Tac </span>
+      <span id = "doom-text">DOOM</span>
+    </p>
+  </div>
 
-      // Adjust the randomness to give computer an edge
-      const rand = Math.random();
-      if (rand < 0.75) {
-        // 75% chance computer wins
-        if (userChoice === 'rock') computerChoice = 'paper';
-        else if (userChoice === 'paper') computerChoice = 'scissors';
-        else computerChoice = 'rock';
-      } else {
-        // 25% chance player wins or draws
-        computerChoice = choices[Math.floor(Math.random() * choices.length)];
-      }
 
-      const resultText = document.getElementById('result');
-      let result = '';
+  <div id="game-configuration"> 
+    <h2 id = "identity-label">Choose your mark</h2>
+    <div id="identity-selection" class="row">
+      <div class="cell identity-cell" value="X">X</div>
+      <div class="cell identity-cell" value="O">O</div>
+    </div>
+  </div>
 
-      if (userChoice === computerChoice) {
-        result = "It's a draw!";
-        resultText.className = 'result draw';
-      } else if (
-        (userChoice === 'rock' && computerChoice === 'scissors') ||
-        (userChoice === 'paper' && computerChoice === 'rock') ||
-        (userChoice === 'scissors' && computerChoice === 'paper')
-      ) {
-        result = "You win!";
-        resultText.className = 'result win';
-      } else {
-        result = "You lose!";
-        resultText.className = 'result lose';
-      }
+  <div id="game-grid">
+    <div class="row">
+      <div class="cell game-cell" id="c00"></div>
+      <div class="cell game-cell" id="c01"></div>
+      <div class="cell game-cell" id="c02"></div>
+    </div>
+    <div class="row">
+      <div class="cell game-cell" id="c10"></div>
+      <div class="cell game-cell" id="c11"></div>
+      <div class="cell game-cell" id="c12"></div>
+    </div>
+    <div class="row">
+      <div class="cell game-cell" id="c20"></div>
+      <div class="cell game-cell" id="c21"></div>
+      <div class="cell game-cell" id="c22"></div>
+    </div>
+    <div class="computer-threat">
+      <p><span id ="computer-threat-text"></span></p>
+    </div>
+  </div>
 
-      resultText.innerHTML = `You chose ${userChoice}. AHNAF TAHSIN chose ${computerChoice}. ${result}`;
-    }
-  </script>
-</body>
-</html>
+  <div id="game-over">
+    <h2 id="game-end-heading"></h2>
+    <h3 id="game-end-subheading"></h2>
+    <button class="game-btn" id="game-reset-btn">&#8634; Play again</button>
+  </div>
+  
+</div>
