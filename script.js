@@ -20,14 +20,14 @@ var $narrativeThree = $("#game-narrative-three");
 var $narrativeFour = $("#game-narrative-four");
 
 var computerThreats = ["Prepare to suffer extreme humiliation!",
-                      "I will destroy you!",
-                      "I am invincible!",
-                      "You cannot defeat me!",
-                      "You will be annihilated!",
+                      "I will destroy you with chanda!",
+                      "I am khamba!",
+                      "You cannot defeat me!I am card master",
+                      "You will be killed!",
                       "You will fail!",
-                      "Fear me!",
-                      "Vengeance is mine!",
-                      "I hunger!"]
+                      "Fear me! I will take your 10% assets!!",
+                      "Tempo stand is mine!",
+                      "I hunger for chanda!"]
 
 var $identityBtn = $(".identity-cell");
 var $gameBtn = $(".game-cell");
@@ -458,12 +458,12 @@ function gameOver(winCase) {
     
   } else if (winCase === game.aiMark) {
     // PC wins
-    $("#game-end-heading").text("Alas, the computer has claimed victory!");
-    $("#game-end-subheading").text("May they bathe their circuits in tic-tac-toe glory.");
+    $("#game-end-heading").text("Alas, the computer has claimed chanda!");
+    $("#game-end-subheading").text("May we can create this kind of digital chanda machine");
   } else {
     // Draw
-    $("#game-end-heading").text("X and O, ancient enemies, have concluded their bout in a draw.");
-    $("#game-end-subheading").text("Perhaps their feud will be settled in another life, another dimension...");
+    $("#game-end-heading").text("Let's devide chanda together!!!");
+    $("#game-end-subheading").text("I learned taking chanda from my teacher chanda-abbas");
   }
 }
 
