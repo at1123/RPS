@@ -458,12 +458,12 @@ function gameOver(winCase) {
     
   } else if (winCase === game.aiMark) {
     // PC wins
-    $("#game-end-heading").text("Alas, the computer has claimed chanda!");
-    $("#game-end-subheading").text("May we can create this kind of digital chanda machine");
+    $("#game-end-heading").text("See… I learned this all the way from London!");
+    $("#game-end-subheading").text("Vote for khamba! vote for card!!family card!!");
   } else {
     // Draw
     $("#game-end-heading").text("Let's devide chanda together!!!");
-    $("#game-end-subheading").text("I learned taking chanda from my teacher chanda-abbas");
+    $("#game-end-subheading").text("I learnt taking chanda from my teacher chanda-abbas");
   }
 }
 
