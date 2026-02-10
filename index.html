@@ -1,58 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tic Tac Khamba|AT</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="main.js"></script>
-</head>
-<body>
 <div id="container">
 
-  <!-- Narrative screens -->
   <div class="game-narrative" id="game-narrative-one">
-    <p class="game-narrative-text">In a world where two forces battle for domination, only KHAMBA will reign supreme.</p>
-    <button class="game-btn" id="narrative-one-btn">NEXT</button>
+    <p class="game-narrative-text">In a world where two forces battle for domination of a war-torn landscape, only one will draw the line and reign supreme.</p>
+    <button class="game-btn" id="narrative-one-btn">...</button>
   </div>
 
   <div class="game-narrative" id="game-narrative-two">
-    <p class="game-narrative-text">The year is 2048. You are a cybernetic space marine with no memory.</p>
-    <button class="game-btn" id="narrative-two-btn">NEXT</button>
+    <p class="game-narrative-text">The year is 2048.</p>
+    <p class="game-narrative-text">In a post apocalyptic galaxy run by giant corporations, you are a cybernetically enhanced space marine with no memory of their past.</p>
+    <button class="game-btn" id="narrative-two-btn">...</button>
   </div>
 
   <div class="game-narrative" id="game-narrative-three">
-    <p class="game-narrative-text">Are you the chosen one foretold by family card?</p>
+    <p class="game-narrative-text">Are you the chosen one foretold by prophecy?</p>
+    <p class="game-narrative-text">Do you have the strength to survive...</p>
     <div id="narrative-three-btns">
       <button class="game-btn" id="narrative-three-btn">YES</button>
+      <div></div>
       <a class="game-btn" id="puppies-btn" href="https://au.pinterest.com/explore/puppy-pictures/" target="_blank">NO</a>
     </div>
   </div>
 
-  <!-- Header animation -->
-  <div id="header">
+  <div id = "header">
     <p class="dramatic-text">
-      <span id="tic-text">Tic </span>
-      <span id="tac-text">Tac </span>
-      <span id="doom-text">KHAMBA</span>
+      <span id = "tic-text">Tic </span>
+      <span id = "tac-text">Tac </span>
+      <span id = "doom-text">DOOM</span>
     </p>
   </div>
 
-  <!-- Game configuration -->
-  <div id="game-configuration">
-    <h2 id="identity-label">Choose your mark</h2>
+
+  <div id="game-configuration"> 
+    <h2 id = "identity-label">Choose your mark</h2>
     <div id="identity-selection" class="row">
       <div class="cell identity-cell" value="X">X</div>
       <div class="cell identity-cell" value="O">O</div>
     </div>
-    <h2 id="difficulty-label">Choose difficulty</h2>
-    <div id="difficulty-selection" class="row">
-      <div class="cell difficulty-cell" value="easy">Easy</div>
-      <div class="cell difficulty-cell" value="hard">Hard</div>
-    </div>
   </div>
 
-  <!-- Game grid -->
   <div id="game-grid">
     <div class="row">
       <div class="cell game-cell" id="c00"></div>
@@ -70,17 +55,14 @@
       <div class="cell game-cell" id="c22"></div>
     </div>
     <div class="computer-threat">
-      <p><span id="computer-threat-text"></span></p>
+      <p><span id ="computer-threat-text"></span></p>
     </div>
   </div>
 
-  <!-- Game over -->
   <div id="game-over">
     <h2 id="game-end-heading"></h2>
-    <h3 id="game-end-subheading"></h3>
-    <button class="game-btn" id="game-reset-btn">&#8634; Play THIS KHAMBA again</button>
+    <h3 id="game-end-subheading"></h2>
+    <button class="game-btn" id="game-reset-btn">&#8634; Play again</button>
   </div>
-
+  
 </div>
-</body>
-</html>
